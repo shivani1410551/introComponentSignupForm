@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+$font-family: "Poppins", sans-serif;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+}
+$font-weight: (
+  "regular": 400,
+  "medium": 500,
+  "semi-bold": 600,
+  "bold": 700,
+);
+
+$BackgroundColor: hsl(0, 100%, 74%);
+$spanColor: hsl(0, 100%, 74%);
+$btnColor: hsl(154, 59%, 51%);
+$tagColor: hsl(248, 32%, 49%);
+$DarkBlue: hsl(249, 10%, 26%);
+$GrayishBlue: hsl(246, 25%, 77%);
+
+// @mixin grid {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+// }
+// @mixin flexColumn {
+//   display: flex;
+//   flex-direction: column;
+// }
+// @mixin gridMobile {
+//   display: grid;
+//   grid-template-columns: 1fr;
+// }
+// @mixin flexCenter($ai, $jc) {
+//   display: flex;
+//   align-items: $ai;
+//   justify-content: $jc;
+// }
+
+body {
+  max-width: 1440px;
+  height: 100vh;
+  background-image: url("/public/images/bg-intro-desktop.png");
+  background-color: $BackgroundColor;
+  .container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+    padding-inline: 160px;
+    gap: 1rem;
+    .description {
+      margin: auto;
+      color: #fff;
+      width: 500px;
+      h1 {
+        font-size: 55px;
+        line-height: 2.5rem;
+        padding-block: 10px;
+        font-weight: map-get($map: $font-weight, $key: "bold");
+      }
+      .descriptionPara {
+        font-size: 15px;
+        font-weight: map-get($map: $font-weight, $key: "regular");
+        opacity: 0.8;
+      }
+    }
+    .formWrapper {
+      margin: auto;
+      width: 500px;
+      .tag {
+        width: 100%;
+        background-color: $tagColor;
+        border-radius: 8px;
+        padding: 20px 70px;
+        font-size: 15px;
+        text-align: center;
+        color: $GrayishBlue;
+        margin-bottom: 1rem;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        strong {
+          font-weight: map-get($map: $font-weight, $key: "bold");
+          color: #fff;
+        }
+      }
+      Form {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        background-color: #fff;
+        border-radius: 8px;
+        width: 100%;
+        padding: 30px;
+        .field,
+        button {
+          padding: 17px 25px;
+          margin-bottom: 16px;
+          border: 1px solid $GrayishBlue;
+          border-radius: 8px;
+          width: 100%;
+          font-weight: 600;
+        }
+        button {
+          background-color: $btnColor;
+          text-transform: uppercase;
+          color: #fff;
+          margin-block: 15px 10px;
+          box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+          font-size: 15px;
+          &:hover {
+            opacity: 0.7;
+            outline: none;
+          }
+        }
+        .footerText {
+          font-size: 12px;
+          text-align: center;
+          color: $GrayishBlue;
+          span {
+            color: $spanColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-content: center;
+      justify-content: center;
+      .description {
+        width: 300px;
+        h1 {
+          font-size: 35px;
+          line-height: 2.5rem;
+        }
+        .descriptionPara {
+          font-size: 12px;
+        }
+      }
+      .formWrapper {
+        margin: auto;
+        width: 350px;
+        .tag {
+          padding: 14px 25px;
+        }
+        Form {
+          padding: 30px;
+          .field,
+          button {
+            padding: 12px 25px;
+          }
+          button {
+            margin-block: 15px 10px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 430px) {
+  body {
+    .container {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-content: center;
+      justify-content: center;
+      .description {
+        width: 300px;
+        h1 {
+          font-size: 35px;
+          line-height: 2rem;
+        }
+        .descriptionPara {
+          font-size: 12px;
+        }
+      }
+      .formWrapper {
+        margin: auto;
+        width: 350px;
+        .tag {
+          padding: 14px 25px;
+        }
+        Form {
+          padding: 30px;
+          .field,
+          button {
+            padding: 12px 25px;
+          }
+          button {
+            margin-block: 15px 10px;
+          }
+        }
+      }
+    }
+  }
+}
