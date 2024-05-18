@@ -20,24 +20,11 @@ $btnColor: hsl(154, 59%, 51%);
 $tagColor: hsl(248, 32%, 49%);
 $DarkBlue: hsl(249, 10%, 26%);
 $GrayishBlue: hsl(246, 25%, 77%);
-
-// @mixin grid {
-//   display: grid;
-//   grid-template-columns: 1fr 1fr;
-// }
-// @mixin flexColumn {
-//   display: flex;
-//   flex-direction: column;
-// }
-// @mixin gridMobile {
-//   display: grid;
-//   grid-template-columns: 1fr;
-// }
-// @mixin flexCenter($ai, $jc) {
-//   display: flex;
-//   align-items: $ai;
-//   justify-content: $jc;
-// }
+@mixin gridCenter {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
 
 body {
   max-width: 1440px;
@@ -133,10 +120,9 @@ body {
 @media screen and (max-width: 768px) {
   body {
     .container {
-      display: grid;
+      padding-inline: 70px;
+      @include gridCenter;
       grid-template-columns: 1fr 1fr;
-      align-content: center;
-      justify-content: center;
       .description {
         width: 300px;
         h1 {
@@ -170,10 +156,9 @@ body {
 @media screen and (max-width: 430px) {
   body {
     .container {
-      display: grid;
+      padding-inline: 36px;
+      @include gridCenter;
       grid-template-columns: 1fr;
-      align-content: center;
-      justify-content: center;
       .description {
         width: 300px;
         h1 {
@@ -188,10 +173,10 @@ body {
         margin: auto;
         width: 350px;
         .tag {
-          padding: 14px 25px;
+          padding: 12px 25px;
         }
         Form {
-          padding: 30px;
+          padding: 24px;
           .field,
           button {
             padding: 12px 25px;
