@@ -62,6 +62,7 @@ body {
         font-weight: map-get($map: $font-weight, $key: "bold");
       }
       .descriptionPara {
+        padding-top: 10px;
         font-size: 15px;
         font-weight: map-get($map: $font-weight, $key: "regular");
         opacity: 0.8;
